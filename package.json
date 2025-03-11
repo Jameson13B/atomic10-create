@@ -1,0 +1,31 @@
+{
+  "name": "atomic10-create",
+  "version": "1.0.0",
+  "main": "./bin/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "atomic10-create": "./bin/index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Jameson13B",
+  "license": "MIT",
+  "description": "Quickly create a new project with the Atomic10 stack",
+  "dependencies": {
+    "@inquirer/prompts": "^7.3.2",
+    "antd": "^5.24.3",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "figlet": "^1.8.0",
+    "inquirer": "^12.4.2",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.7.0",
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2"
+  }
+}
