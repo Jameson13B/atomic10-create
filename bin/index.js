@@ -129,12 +129,24 @@ program
                 `${project}/src/App.${
                   defaultStack.language === "react-ts" ? "tsx" : "jsx"
                 }`,
-                [EMPTY_LINE],
-                [fileStrings.vanillaExtractPluginImport]
+                [EMPTY_LINE, EMPTY_LINE, INSIDE_APP_FUNCTION],
+                [
+                  fileStrings.vanillaExtractPluginImport,
+                  fileStrings.vanillaExtractDarkModeImport,
+                  fileStrings.vanillaExtractDarkModeUsage,
+                ]
               )
               create(
-                `${project}/src/theme.css.ts`,
-                fileStrings.vanillaExtractStyles
+                [
+                  `${project}/src/theme.css.ts`,
+                  `${project}/src/styles.css.ts`,
+                  `${project}/src/useDarkMode.tsx`,
+                ],
+                [
+                  fileStrings.vanillaExtractTheme,
+                  fileStrings.vanillaExtractStyles,
+                  fileStrings.useDarkMode,
+                ]
               )
             } catch (error) {
               console.error("Vanilla Extract Error:", error)
