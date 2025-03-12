@@ -5,7 +5,11 @@ import fs from "fs"
  * @param {string} file - The file to create
  * @param {string} content - The content to write to the file
  */
-export const create = (file, content) => fs.writeFileSync(file, content, "utf8")
+export const create = (file, content) => {
+  Array.isArray(file) && Array.isArray(content)
+    ? file.forEach((f, i) => fs.writeFileSync(f, content[i], "utf8"))
+    : fs.writeFileSync(file, content, "utf8")
+}
 
 /**
  * Update a file
