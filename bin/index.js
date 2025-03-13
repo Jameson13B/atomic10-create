@@ -116,7 +116,7 @@ program
           `cd ${project}/ && npm install -D @vanilla-extract/css @vanilla-extract/vite-plugin`,
           () => {
             try {
-              // Update the vite.config.ts, App.tsx, and create src/styles.css.ts
+              // Update the vite.config.ts and App.tsx
               update(
                 `${project}/vite.config.ts`,
                 [EMPTY_LINE, START_OF_PLUGINS_ARRAY],
@@ -129,13 +129,13 @@ program
                 `${project}/src/App.${
                   defaultStack.language === "react-ts" ? "tsx" : "jsx"
                 }`,
-                [EMPTY_LINE, EMPTY_LINE, INSIDE_APP_FUNCTION],
+                [EMPTY_LINE, INSIDE_APP_FUNCTION],
                 [
-                  fileStrings.vanillaExtractPluginImport,
                   fileStrings.vanillaExtractDarkModeImport,
                   fileStrings.vanillaExtractDarkModeUsage,
                 ]
               )
+              // Create the theme.css.ts, styles.css.ts, and useDarkMode.tsx files
               create(
                 [
                   `${project}/src/theme.css.ts`,

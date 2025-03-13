@@ -136,7 +136,6 @@ globalStyle("#root", {
   minHeight: "100vh",
 })
 `
-export const vanillaExtractPluginImport = `import "./theme.css.ts"\n`
 export const vanillaExtractDarkModeImport = `import { useDarkMode } from "./useDarkMode.tsx"
 import { darkTheme, lightTheme } from "./theme.css.ts"
 `
